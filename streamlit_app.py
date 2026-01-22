@@ -158,7 +158,7 @@ if submit:
                 ]
                 
                 # 修复这里的语法错误
-                df_stock = pd.DataFrame(stock_info[1:], columns=stock_info[0](@ref)
+                df_stock = pd.DataFrame(stock_info[1:], columns=stock_info[0]
                 col1.dataframe(df_stock, width=400, hide_index=True)
 
                 # 2. 价格信息表格
@@ -172,7 +172,7 @@ if submit:
                     (t('week52_low'), safe_format(info.get('fiftyTwoWeekLow'), fmt="${:.2f}"))
                 ]
                 
-                df_price = pd.DataFrame(price_info[1:], columns=price_info[0](@ref)
+                df_price = pd.DataFrame(price_info[1:], columns=price_info[0]
                 col2.dataframe(df_price, width=400, hide_index=True)
 
                 # 3. 商业指标表格
@@ -186,7 +186,7 @@ if submit:
                     (t('recommendation'), info.get('recommendationKey', t('na')).capitalize())
                 ]
                 
-                df_metrics = pd.DataFrame(biz_metrics[1:], columns=biz_metrics[0](@ref)
+                df_metrics = pd.DataFrame(biz_metrics[1:], columns=biz_metrics[0]
                 col3.dataframe(df_metrics, width=400, hide_index=True)
 
                 # ========== 盈利数据部分 ==========
