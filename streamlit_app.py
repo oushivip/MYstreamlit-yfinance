@@ -11,8 +11,33 @@ try:
 except ImportError:
     TRANSLATIONS_AVAILABLE = False
     # 创建默认英文翻译
-    TRANSLATIONS = {"en": {}}
-    PERIOD_MAP = {"en": {}}
+    TRANSLATIONS = {"en": {}, "zh": {}}
+    for key in ["page_title", "sidebar_title", "ticker_label", "period_label", 
+                "submit_button", "fetching", "error_ticker", "error_general", "na", "value"]:
+        TRANSLATIONS["en"][key] = key
+        TRANSLATIONS["zh"][key] = key
+    
+    # 默认周期映射
+    PERIOD_MAP = {
+        "en": {
+            "1D": ("1d", "1h"),
+            "5D": ("5d", "1d"),
+            "1M": ("1mo", "1d"),
+            "6M": ("6mo", "1wk"),
+            "YTD": ("ytd", "1mo"),
+            "1Y": ("1y", "1mo"),
+            "5Y": ("5y", "3mo"),
+        },
+        "zh": {
+            "1天": ("1d", "1h"),
+            "5天": ("5d", "1d"),
+            "1个月": ("1mo", "1d"),
+            "6个月": ("6mo", "1wk"),
+            "年初至今": ("ytd", "1mo"),
+            "1年": ("1y", "1mo"),
+            "5年": ("5y", "3mo"),
+        }
+    }
 
 # ========== 语言设置 ==========
 if 'language' not in st.session_state:
@@ -32,6 +57,9 @@ def t(key):
 # ========== 原有函数（稍作修改支持双语） ==========
 def format_value(value):
     """格式化市值和企业价值，支持双语后缀"""
+    if value is None:
+        return t('na')
+    
     if st.session_state.language == 'zh':
         suffixes = ["", "千", "百万", "十亿", "万亿"]
     else:
@@ -124,11 +152,12 @@ if submit:
                     (t('country'), info.get('country', t('na'))),
                     (t('sector'), info.get('sector', t('na'))),
                     (t('industry'), info.get('industry', t('na'))),
-                    (t('market_cap'), format_value(info.get('marketCap', 0))),
-                    (t('enterprise_value'), format_value(info.get('enterpriseValue', 0))),
+                    (t('market_cap'), format_value(info.get('marketCap'))),
+                    (t('enterprise_value'), format_value(info.get('enterpriseValue'))),
                     (t('employees'), info.get('fullTimeEmployees', t('na')))
                 ]
                 
+                # 修复这里的语法错误
                 df_stock = pd.DataFrame(stock_info[1:], columns=stock_info[0](@ref)
                 col1.dataframe(df_stock, width=400, hide_index=True)
 
