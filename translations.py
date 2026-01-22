@@ -3,6 +3,7 @@
 
 TRANSLATIONS = {
     "en": {
+        '''
         # 页面配置
         "page_title": "Financial Analysis",
         
@@ -53,6 +54,7 @@ TRANSLATIONS = {
         
         # 图表标签
         "historical_chart": "Historical Price Chart",
+        '''
         
         # 按钮文本
         "zh_button": "中文",
@@ -97,7 +99,7 @@ TRANSLATIONS = {
         
         # 盈利数据部分
         "earnings_title": "盈利表现",
-        "earnings_date": "盈利日期",
+        "earnings_date": "财报公布日期",
         "price_date": "交易日期",
         "close_change": "收盘价涨跌幅",
         
