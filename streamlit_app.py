@@ -4,6 +4,24 @@ import yfinance as yf
 import pandas as pd
 import altair as alt
 
+# ========== 新增：导入翻译 ==========
+try:
+    from translations import TRANSLATIONS
+except ImportError:
+    # 如果 translations.py 不存在，创建默认英文翻译
+    TRANSLATIONS = {"en": {}, "zh": {}}
+
+# 语言设置
+if 'language' not in st.session_state:
+    st.session_state.language = 'zh'
+
+# 翻译辅助函数
+def t(key):
+    """获取翻译文本"""
+    lang = st.session_state.language
+    return TRANSLATIONS.get(lang, {}).get(key, TRANSLATIONS.get('en', {}).get(key, key))
+
+
 # Streamlit app details
 st.set_page_config(page_title="Financial Analysis", layout="wide")
 with st.sidebar:
