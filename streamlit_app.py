@@ -36,6 +36,18 @@ def get_same_or_next_trading_day(df, date):
     if date in df.index:
         return date
     return get_next_trading_day(df, date)
+    
+with st.sidebar:
+    if st.button("🔄 帮助翻译表格"):
+        st.info("""
+        **如果表格标题未翻译：**
+        1. 刷新页面
+        2. 再次使用浏览器翻译
+        3. 或者手动选择表格区域翻译
+        """)
+        
+        # 触发表格重绘
+        st.session_state.refresh_table = True
 
 # If Submit button is clicked
 if submit:
