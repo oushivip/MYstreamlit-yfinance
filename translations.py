@@ -3,6 +3,56 @@
 
 TRANSLATIONS = {
     "en": {
+        # 页面配置
+        "page_title": "Financial Analysis",
+        
+        # 侧边栏
+        "sidebar_title": "Financial Analysis",
+        "ticker_label": "Enter a stock ticker (e.g. AAPL)",
+        "period_label": "Select time frame",
+        "period_options": ["1D", "5D", "1M", "6M", "YTD", "1Y", "5Y"],
+        "submit_button": "Submit",
+        
+        # 表格标题
+        "stock_info": "Stock Info",
+        "price_info": "Price Info",
+        "business_metrics": "Business Metrics",
+        
+        # 表格列名
+        "country": "Country",
+        "sector": "Sector",
+        "industry": "Industry",
+        "market_cap": "Market Cap",
+        "enterprise_value": "Enterprise Value",
+        "employees": "Employees",
+        "current_price": "Current Price",
+        "previous_close": "Previous Close",
+        "day_high": "Day High",
+        "day_low": "Day Low",
+        "week52_high": "52 Week High",
+        "week52_low": "52 Week Low",
+        "eps_fwd": "EPS (FWD)",
+        "pe_fwd": "P/E (FWD)",
+        "peg_ratio": "PEG Ratio",
+        "div_rate": "Div Rate (FWD)",
+        "div_yield": "Div Yield (FWD)",
+        "recommendation": "Recommendation",
+        
+        # 盈利数据部分
+        "earnings_title": "Earnings Performance",
+        "earnings_date": "Earnings Date",
+        "price_date": "Price Date",
+        "close_change": "Close % Change",
+        
+        # 其他文本
+        "fetching": "Fetching data...",
+        "error_ticker": "Please provide a valid stock ticker.",
+        "error_general": "An error occurred",
+        "na": "N/A",
+        "value": "Value",
+        
+        # 图表标签
+        "historical_chart": "Historical Price Chart",
         
         # 按钮文本
         "zh_button": "中文",
