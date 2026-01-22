@@ -37,13 +37,6 @@ def get_same_or_next_trading_day(df, date):
         return date
     return get_next_trading_day(df, date)
     
-st.markdown("""
-<!-- 让翻译插件识别这些关键词 -->
-<span style="display:none">
-Country Sector Industry Market Cap Enterprise Value Employees Current Price Previous Close Day High Day Low 52 Week High 52 Week Low EPS P/E PEG Ratio Div Rate Div Yield Recommendation
-</span>
-""", unsafe_allow_html=True)
-
 
 # If Submit button is clicked
 if submit:
